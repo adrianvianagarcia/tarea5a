@@ -5,8 +5,8 @@ import javax.swing.JOptionPane;
 public class Ej1 {
 
     public static void main(String[] args) {
-        String[] aux = crearArrayPalabras();
-        mostrarArray(aux);
+     String[] aux = crearArrayPalabras();
+     mostrarArray(aux);
     }
 
     public static int numeroDePalabras() {
@@ -47,5 +47,19 @@ public class Ej1 {
         }
         JOptionPane.showMessageDialog(null, aux);
     }
-    
+
+    public static int cuentaVocales(String palabra) {
+        
+        int contador = 0;
+        for (int i = 0; i < palabra.length(); i++) {
+            if (palabra.charAt(i) == 'a' || palabra.charAt(i) == 'e'
+                    || palabra.charAt(i) == 'i' || palabra.charAt(i) == 'o'
+                    || palabra.charAt(i) == 'u'){
+                
+                contador++;
+            }
+
+        }
+        return contador;
+    }
 }
