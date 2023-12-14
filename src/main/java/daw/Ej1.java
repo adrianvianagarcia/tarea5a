@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 public class Ej1 {
 
     public static void main(String[] args) {
-
+        String[] aux = crearArrayPalabras();
+        mostrarArray(aux);
     }
 
     public static int numeroDePalabras() {
@@ -30,7 +31,21 @@ public class Ej1 {
 
         for (int i = 0; i < palabrasIntroducidas.length; i++) {
 
-            palabrasIntroducidas[i] = 
+            palabrasIntroducidas[i] = JOptionPane.showInputDialog(null,
+                    "Introduce la siguiente palabra");
         }
+        return palabrasIntroducidas;
     }
+
+    public static void mostrarArray(String[] palabrasIntroducidas) {
+
+        String aux = "";
+        int repetir = 0;
+        for (int i = 0; i < palabrasIntroducidas.length; i++) {
+            aux += "Posicion " + repetir + " - " + "Palabra: " + palabrasIntroducidas[i] + "\n";
+            repetir++;
+        }
+        JOptionPane.showMessageDialog(null, aux);
+    }
+    
 }
