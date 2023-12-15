@@ -5,8 +5,11 @@ import javax.swing.JOptionPane;
 public class Ej1 {
 
     public static void main(String[] args) {
-     String[] aux = crearArrayPalabras();
-     mostrarArray(aux);
+        String[] aux = crearArrayPalabras();
+        mostrarArray(aux);
+
+        JOptionPane.showMessageDialog(null,
+                arraysMasDe3Vocales(aux));
     }
 
     public static int numeroDePalabras() {
@@ -49,17 +52,37 @@ public class Ej1 {
     }
 
     public static int cuentaVocales(String palabra) {
-        
+
         int contador = 0;
         for (int i = 0; i < palabra.length(); i++) {
             if (palabra.charAt(i) == 'a' || palabra.charAt(i) == 'e'
                     || palabra.charAt(i) == 'i' || palabra.charAt(i) == 'o'
-                    || palabra.charAt(i) == 'u'){
-                
+                    || palabra.charAt(i) == 'u') {
+
                 contador++;
             }
 
         }
         return contador;
     }
+
+    public static String[] arraysMasDe3Vocales(String[] miarray) {
+        int contador = 0;
+        for (int i = 0; i < miarray.length; i++) {
+            if (cuentaVocales(miarray[i]) >= 3) {
+                contador++;
+            }
+        }
+
+        String[] arrayCopia = new String[contador];
+        int k = 0;
+        for (int j = 0; j < miarray.length; j++) {
+            if (cuentaVocales(miarray[j]) >= 3) {
+                arrayCopia[k] = miarray[j];
+                k++;
+            }
+        }
+        return arrayCopia;
+    }
+
 }
