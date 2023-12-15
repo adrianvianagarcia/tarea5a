@@ -5,11 +5,13 @@ import javax.swing.JOptionPane;
 public class Ej1 {
 
     public static void main(String[] args) {
-        String[] aux = crearArrayPalabras();
-        mostrarArray(aux);
+//        String[] aux = crearArrayPalabras();
+//        mostrarArray(aux);
+//
+//        JOptionPane.showMessageDialog(null,
+//                arraysMenosDe2Vocales(aux));
 
-        JOptionPane.showMessageDialog(null,
-                arraysMenosDe2Vocales(aux));
+        System.out.println(posicionLetras("Adios", 'o'));;
     }
 
     public static int numeroDePalabras() {
@@ -102,6 +104,20 @@ public class Ej1 {
             }
         }
         return arrayCopia;
+    }
+
+    public static int posicionLetras(String palabra, char letra) {
+
+        int posicion = -1;
+        for (int i = 0; i < palabra.length(); i++) {
+            if (palabra.charAt(i) == letra) {
+
+                posicion = i;
+                break;
+            }
+
+        }
+        return posicion;
     }
 
 }
