@@ -1,17 +1,18 @@
 package daw;
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 public class Ej1 {
 
     public static void main(String[] args) {
-//        String[] aux = crearArrayPalabras();
-//        mostrarArray(aux);
-//
-//        JOptionPane.showMessageDialog(null,
-//                arraysMenosDe2Vocales(aux));
+        String[] miarray = crearArrayPalabras();
+        mostrarArray(miarray);
 
-        System.out.println(posicionLetras("Adios", 'o'));;
+        JOptionPane.showMessageDialog(null,
+                arraysMenosDe2Vocales(miarray));
+        String arrayEnteros = Arrays.toString(arrayNumerosPosicion(miarray, 'o'));
+        JOptionPane.showMessageDialog(null, arrayEnteros);
     }
 
     public static int numeroDePalabras() {
@@ -118,6 +119,17 @@ public class Ej1 {
 
         }
         return posicion;
+    }
+
+    public static int[] arrayNumerosPosicion(String[] array, char letra) {
+        int[] arrayCopia = new int[array.length];
+        int j = 0;
+        for (int i = 0; i < array.length; i++) {
+
+            arrayCopia[j] = posicionLetras(array[i], letra);
+            j++;
+        }
+        return arrayCopia;
     }
 
 }
