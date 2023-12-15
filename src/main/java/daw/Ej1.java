@@ -9,7 +9,7 @@ public class Ej1 {
         mostrarArray(aux);
 
         JOptionPane.showMessageDialog(null,
-                arraysMasDe3Vocales(aux));
+                arraysMenosDe2Vocales(aux));
     }
 
     public static int numeroDePalabras() {
@@ -78,6 +78,25 @@ public class Ej1 {
         int k = 0;
         for (int j = 0; j < miarray.length; j++) {
             if (cuentaVocales(miarray[j]) >= 3) {
+                arrayCopia[k] = miarray[j];
+                k++;
+            }
+        }
+        return arrayCopia;
+    }
+
+    public static String[] arraysMenosDe2Vocales(String[] miarray) {
+        int contador = 0;
+        for (int i = 0; i < miarray.length; i++) {
+            if (cuentaVocales(miarray[i]) <= 2) {
+                contador++;
+            }
+        }
+
+        String[] arrayCopia = new String[contador];
+        int k = 0;
+        for (int j = 0; j < miarray.length; j++) {
+            if (cuentaVocales(miarray[j]) <= 2) {
                 arrayCopia[k] = miarray[j];
                 k++;
             }
